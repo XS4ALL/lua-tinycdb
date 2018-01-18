@@ -1,0 +1,40 @@
+Source: lua-tinycdb
+Section: interpreters
+Priority: optional
+Maintainer: Kai Storbeck <kai@xs4all.net>
+Build-Depends: debhelper (>= 9), dh-lua, libcdb-dev (>= 0.78)
+Standards-Version: 3.9.8
+Homepage: http://asbradbury.org/projects/lua-tinycdb/
+
+Package: lua-tinycdb
+Architecture: any
+Multi-Arch: same
+Pre-Depends: multiarch-support
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: Tinycdb bindings for the Lua language examples and tests
+ A binding to the tinycdb library by Michael Tokarev, which is a
+ public domain implementation of Daniel J. Bernstein's Constant
+ Database (cdb). A cdb is a key-value store (much like BDB/gdbm),
+ but it cannot be updated at runtime (only rebuilt). Reading is
+ very fast, and rebuilding is done atomically by building the new
+ database and then renaming. lua-tinycdb includes the tinycdb
+ source so there are no external dependencies.
+
+Package: lua-tinycdb-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Pre-Depends: multiarch-support
+Depends: lua-tinycdb (= ${binary:Version}), ${misc:Depends}
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: Tinycdb bindings for the Lua language examples and tests
+ A binding to the tinycdb library by Michael Tokarev, which is a
+ public domain implementation of Daniel J. Bernstein's Constant
+ Database (cdb). A cdb is a key-value store (much like BDB/gdbm),
+ but it cannot be updated at runtime (only rebuilt). Reading is
+ very fast, and rebuilding is done atomically by building the new
+ database and then renaming. lua-tinycdb includes the tinycdb
+ source so there are no external dependencies.
